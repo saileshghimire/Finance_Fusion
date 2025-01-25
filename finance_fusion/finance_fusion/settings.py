@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-a3#5mqgl#h*%v$ib6lmsqx@561of!^$jqjfe)3cc(-jnhfhaf5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'finance_fusion.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'financial_DB',
+        'USER': 'financial',
+        'PASSWORD': 'financial@123',
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 
