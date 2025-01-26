@@ -1,5 +1,5 @@
 from ..models import CustomUser
-from ..serializers.user_register import CustomUserDetailSerializer
+from ..serializer.user_register import CustomUserDetailSerializer
 from rest_framework import generics
 from rest_framework import permissions
 from rest_framework_simplejwt import authentication

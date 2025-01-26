@@ -50,6 +50,6 @@ class SuperUserCreateSerializer(serializers.ModelSerializer):
             'middle_name': {'required': False} 
         }
 
-        def create_superuser(self, validated_data):
-            user = CustomUser.objects.create_superuser(**validated_data) 
-            return user
+    def create_superuser(self, validated_data):
+        user = CustomUser.objects.create_superuser(**validated_data) 
+        return user

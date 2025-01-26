@@ -1,4 +1,4 @@
-from serializers.user_register import CustomUserListSerializer, CustomUserCreateSerializer, SuperUserCreateSerializer
+from ..serializer.user_register import CustomUserListSerializer, CustomUserCreateSerializer, SuperUserCreateSerializer
 from rest_framework import generics
 from ..models import CustomUser
 from rest_framework.permissions import AllowAny
