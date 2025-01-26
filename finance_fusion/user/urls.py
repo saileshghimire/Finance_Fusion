@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.urls import path
 from .views.register_user import CustomUserListCreate, SuperuserListCreate
 from .views.update_user import CustomUserDetails
