@@ -16,7 +16,7 @@ class CustomUserCreateSerializer(serializers.ModelSerializer):
 class CustomUserListSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields  = ['id', 'first_name', 'last_name', 'middle_name', 'email', 'is_active']
+        fields  = ['id', 'first_name', 'last_name', 'middle_name', 'email', 'is_active','is_staff', 'is_superuser']
 
 class CustomUserDetailSerializer(serializers.ModelSerializer):
     class Meta:
@@ -49,6 +49,7 @@ class SuperUserCreateSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'middle_name': {'required': False} 
         }
+
 
     def create_superuser(self, validated_data):
         user = CustomUser.objects.create_superuser(**validated_data) 

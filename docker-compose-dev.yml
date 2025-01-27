@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   web:
@@ -6,6 +5,8 @@ services:
       context: ./finance_fusion
       dockerfile: Dockerfile
     container_name: django-web
+    env_file:
+      - ./finance_fusion/.env
     ports:
       - "8000:8000"
     depends_on:

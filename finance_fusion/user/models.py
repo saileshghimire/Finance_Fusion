@@ -11,6 +11,7 @@ class CustomUserManager(BaseUserManager):
         email = self.normalize_email(email)
         extra_fields.setdefault('is_active', True)
         user = self.model(email=email, **extra_fields)
+        user.set_password(password)
         user.save(using=self._db)
         return user
 
@@ -27,6 +28,7 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields) 
 
 class CustomUser(AbstractUser):
+    username = None
     middle_name = models.CharField(max_length=100, blank=True, null=True)
     email = models.EmailField(unique=True,db_index=True)
     USERNAME_FIELD = 'email'
